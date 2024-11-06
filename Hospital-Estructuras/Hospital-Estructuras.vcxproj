@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FILA.h" />
+    <ClInclude Include="Global.h" />
     <ClInclude Include="LISTA_CAMAS.h" />
     <ClInclude Include="LISTA_CAMA_PACIENTES.h" />
     <ClInclude Include="LISTA_PACIENTES.h" />

@@ -1,5 +1,6 @@
 #pragma once
-class FILA_URGENCIAS
+#include "Global.h"
+class FILA
 {
 };
 

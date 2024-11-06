@@ -50,5 +50,8 @@
     <ClInclude Include="PILA_HISTORIALMEDICO.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

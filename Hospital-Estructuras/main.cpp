@@ -1,4 +1,4 @@
-#include <iostream>
+#include "Global.h"
 #include "PILA_HISTORIALMEDICO.h"
 #include "FILA.h"
 #include "LISTA_CAMAS.h"
