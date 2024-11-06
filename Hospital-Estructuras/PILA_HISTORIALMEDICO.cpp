@@ -13,7 +13,7 @@ void PILA_HISTORIALMÉDICO::insertar_historial(string actualiza)
 	tope = nodo;
 }
 //funcion encargada en sacar la informacion actual del paciente
-string PILA_HISTORIALMÉDICO::extraer()
+string PILA_HISTORIALMÉDICO::extraer_historial()
 {
 	historiales* extraido;
 	string informe_actual;
@@ -25,4 +25,14 @@ string PILA_HISTORIALMÉDICO::extraer()
 	delete extraido;
 	return informe_actual;
 
+}
+//funcion encargada en que se pueda mostrar solo el informe actual del paciente
+void PILA_HISTORIALMÉDICO::mostrar_tope()
+{
+	cout << "\tHISTORIAL MÉDICO " << endl;
+	if (tope == NULL) {
+		cout << "No hay un registro del historial" << endl;
+		return;
+	}
+	cout << "\t Informe actual: " << tope->informe << endl;
 }

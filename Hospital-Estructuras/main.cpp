@@ -6,5 +6,4 @@
 #include "LISTA_PACIENTES.h"
 using namespace std;
 void main() {
-
 }

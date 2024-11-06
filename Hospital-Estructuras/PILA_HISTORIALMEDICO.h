@@ -10,7 +10,8 @@ class PILA_HISTORIALMÉDICO
 public:
 	PILA_HISTORIALMÉDICO();
 	void insertar_historial(string);
-	string extraer();
+	string extraer_historial();
+	void mostrar_tope();
 private:
 	historiales* tope, * nodo;
 };
