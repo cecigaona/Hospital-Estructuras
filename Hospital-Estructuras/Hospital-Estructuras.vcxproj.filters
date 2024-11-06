@@ -27,10 +27,7 @@
     <ClCompile Include="LISTA_CAMA_PACIENTES.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="FILA_PACIENTES.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="FILA_URGENCIAS.cpp">
+    <ClCompile Include="FILA.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="PILA_HISTORIALMEDICO.cpp">
@@ -47,10 +44,7 @@
     <ClInclude Include="LISTA_CAMA_PACIENTES.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="FILA_PACIENTES.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="FILA_URGENCIAS.h">
+    <ClInclude Include="FILA.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="PILA_HISTORIALMEDICO.h">

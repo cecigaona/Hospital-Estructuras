@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FILA_PACIENTES.cpp" />
-    <ClCompile Include="FILA_URGENCIAS.cpp" />
+    <ClCompile Include="FILA.cpp" />
     <ClCompile Include="LISTA_CAMAS.cpp" />
     <ClCompile Include="LISTA_CAMA_PACIENTES.cpp" />
     <ClCompile Include="LISTA_PACIENTES.cpp" />
@@ -136,8 +135,7 @@
     <ClCompile Include="PILA_HISTORIALMEDICO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FILA_PACIENTES.h" />
-    <ClInclude Include="FILA_URGENCIAS.h" />
+    <ClInclude Include="FILA.h" />
     <ClInclude Include="LISTA_CAMAS.h" />
     <ClInclude Include="LISTA_CAMA_PACIENTES.h" />
     <ClInclude Include="LISTA_PACIENTES.h" />
