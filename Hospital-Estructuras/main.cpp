@@ -6,4 +6,11 @@
 #include "LISTA_PACIENTES.h"
 using namespace std;
 void main() {
+	//prueba
+	LISTA_PACIENTES prueba;
+	info_paciente info;
+	info.datos.nombre = "aaa";
+	info.datos.edad = 12;
+	prueba.insertar(info);
+	prueba.mostrar();
 }
