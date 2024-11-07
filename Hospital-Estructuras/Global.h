@@ -7,7 +7,7 @@ using namespace std;
 struct pacientes {
 	string ID;
 	string nombre;
-	string estado;
+	bool estado;//true dado de alta, false no
 	string genero;
 	string motivo;
 	int edad;

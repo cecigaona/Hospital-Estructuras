@@ -11,7 +11,7 @@ public:
 	PILA_HISTORIALMÉDICO();
 	void insertar_historial(string);
 	string extraer_historial();
-	void mostrar_tope();
+	string consultar_tope();
 private:
 	historiales* tope, * nodo;
 };

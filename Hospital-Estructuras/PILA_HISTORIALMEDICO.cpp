@@ -26,13 +26,10 @@ string PILA_HISTORIALMÉDICO::extraer_historial()
 	return informe_actual;
 
 }
-//funcion encargada en que se pueda mostrar solo el informe actual del paciente
-void PILA_HISTORIALMÉDICO::mostrar_tope()
+//funcion encargada en obtener el tope
+string PILA_HISTORIALMÉDICO::consultar_tope()
 {
-	cout << "\tHISTORIAL MÉDICO " << endl;
-	if (tope == NULL) {
-		cout << "No hay un registro del historial" << endl;
-		return;
-	}
-	cout << "\t Informe actual: " << tope->informe << endl;
+	if (tope == NULL) 
+		return "sin historial";
+	return tope->informe;
 }
