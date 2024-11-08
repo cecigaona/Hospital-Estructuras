@@ -6,20 +6,16 @@ LISTA_CAMAS::LISTA_CAMAS() {
 	Poblar();
 }
 
-LISTA_CAMAS::~LISTA_CAMAS() {
-	delete[] arregloCamas;  
-}
-
 void LISTA_CAMAS::Mostrar() {
 
-	cout << "--------------------- Lista de Camas ---------------------" << endl << endl;
+    cout << "--------------------- Lista de Camas ---------------------" << endl;
+    cout << "ID \tUbicacción \tEstado" << endl;
 	for (int i = 0; i < CANTIDADCAMAS; i++) {
-		cout << "#: " << arregloCamas[i].ID << "\tUbicacion: " << arregloCamas[i].ubicacion << "\tEstado: ";
-		if (arregloCamas[i].estado) cout << "Ocupada";
-		else cout << "Desocupada";
-        cout << "\tID Paciente: ";
-        if (arregloCamas[i].IDPaciente == 0)cout << "NA";
-        else cout << arregloCamas[i].IDPaciente;
+		cout << "#: " << arregloCamas[i].ID << "\t" << arregloCamas[i].ubicacion << "\t\t";
+		if (arregloCamas[i].estado) 
+            cout << "Ocupada";
+		else 
+            cout << "Desocupada";
         cout << endl;
 	}
 
@@ -33,20 +29,20 @@ void LISTA_CAMAS::Poblar() {
             arregloCamas[(j*10) +i].ID = to_string((j*10)+ i + 1);
             arregloCamas[(j * 10) + i].ubicacion = "Piso " + to_string(j+1);
             arregloCamas[(j * 10) + i].estado = false;
-            arregloCamas[(j * 10) + i].IDPaciente = 0;
+            arregloCamas[(j * 10) + i].ID_paciente = "";
         }
     }
     
 }
 
-void LISTA_CAMAS::OcuparCama(int IDPaciente)
+void LISTA_CAMAS::OcuparCama(string IDPaciente)
 {
 
     for (int i = 0; i < CANTIDADCAMAS; i++) {
 
         if (!arregloCamas[i].estado) {
             arregloCamas[i].estado = true;
-            arregloCamas[i].IDPaciente = IDPaciente;
+            arregloCamas[i].ID_paciente = IDPaciente;
             cout << "Paciente " << IDPaciente << " ha sido asignado a la cama " << arregloCamas[i].ID << " en " << arregloCamas[i].ubicacion << endl;
             return;
         }
@@ -55,7 +51,7 @@ void LISTA_CAMAS::OcuparCama(int IDPaciente)
  
 }
 
-void LISTA_CAMAS::DesocuparCama(int IDPaciente)
+void LISTA_CAMAS::DesocuparCama(string IDPaciente)
 {
     if (!arregloCamas[0].estado) {
 
@@ -66,13 +62,17 @@ void LISTA_CAMAS::DesocuparCama(int IDPaciente)
 
     for (int i = 0; i < CANTIDADCAMAS; i++) {
 
-        if (arregloCamas[i].IDPaciente == IDPaciente) {
+        if (arregloCamas[i].ID_paciente == IDPaciente) {
             arregloCamas[i].estado = false;
-            arregloCamas[i].IDPaciente = 0;
+            arregloCamas[i].ID_paciente = "";
             cout << "Cama de paciente " << IDPaciente << " ha sido liberada"<< endl;
             return;
         }
     }
 
     cout << "No se encontro el paciente" << endl;
+}
+
+LISTA_CAMAS::~LISTA_CAMAS() {
+    delete[] arregloCamas;
 }

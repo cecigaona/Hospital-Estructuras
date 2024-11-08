@@ -17,5 +17,5 @@ struct Camas {
 	string ID;
 	string ubicacion;
 	bool estado;
-	int IDPaciente;
+	string ID_paciente;
 };
