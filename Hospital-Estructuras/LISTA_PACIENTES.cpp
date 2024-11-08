@@ -4,7 +4,7 @@ LISTA_PACIENTES::LISTA_PACIENTES()
 {
 	cabecera = fin = NULL;
 }
-
+//funcion encargada de que se inserten los pacientes nuevos en la lista
 void LISTA_PACIENTES::insertar(info_paciente nuevo_paciente)
 {
 	nodo = new beneficiario;
@@ -19,7 +19,7 @@ void LISTA_PACIENTES::insertar(info_paciente nuevo_paciente)
 	fin->sig = nodo;
 	fin = nodo;
 }
-
+//funcion encargada de cambiar los datos de los pacientes para mantenerlos actualizados
 void LISTA_PACIENTES::modificar_paciente(string ID)
 {
 	if (cabecera == NULL) {
@@ -68,7 +68,7 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 	}
 	cout << "Paciente con ID " << ID << " no encontrado." << endl;
 }
-
+//funcion encargada en mostrar los datos del paciente deseado
 void LISTA_PACIENTES::buscar_paciente(string ID)
 {
 	if (cabecera == NULL) {
@@ -92,7 +92,7 @@ void LISTA_PACIENTES::buscar_paciente(string ID)
 		nodo = nodo->sig;
 	}
 }
-
+//funcion encargada de mostrar toda la lista de pacientes
 void LISTA_PACIENTES::mostrar()
 {
 	int cont=0;
@@ -115,3 +115,4 @@ void LISTA_PACIENTES::mostrar()
 		cout << endl;
 	}
 }
+
