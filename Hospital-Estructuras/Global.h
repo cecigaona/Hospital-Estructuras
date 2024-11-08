@@ -13,8 +13,9 @@ struct pacientes {
 	int edad;
 };
 //registro donde se guarda la información de las camas
-struct camas {
+struct Camas {
 	string ID;
 	string ubicacion;
 	bool estado;
+	int IDPaciente;
 };
