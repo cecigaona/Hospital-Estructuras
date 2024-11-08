@@ -14,7 +14,6 @@ struct beneficiario {
 class LISTA_PACIENTES
 {
 public:
-	//preguntar si en lugar de un extraer podemos hacer un modificar
 	LISTA_PACIENTES();
 	void insertar(info_paciente);
 	void modificar_paciente(string);

@@ -15,6 +15,7 @@ void main() {
 	info.datos.genero = "M";
 	info.datos.motivo = "dolor de cabeza";
 	info.datos.edad = 12;
+	info.expediente.insertar_historial("paciente desnutirdo");
 	prueba.insertar(info);
 	prueba.mostrar();
 	prueba.buscar_paciente("A01");

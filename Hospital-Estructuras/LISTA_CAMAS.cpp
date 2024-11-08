@@ -5,7 +5,7 @@ LISTA_CAMAS::LISTA_CAMAS() {
 	arregloCamas = new Camas[CANTIDADCAMAS];
 	Poblar();
 }
-
+//funcion encargada en mostrar todas las camas
 void LISTA_CAMAS::Mostrar() {
 
     cout << "--------------------- Lista de Camas ---------------------" << endl;
@@ -20,7 +20,7 @@ void LISTA_CAMAS::Mostrar() {
 	}
 
 }
-
+//funcion encargada de que se llene toda la información de las camas automaticamente
 void LISTA_CAMAS::Poblar() {
 
     for (int j = 0; j < CANTIDADPISOS; j++) {
@@ -34,7 +34,7 @@ void LISTA_CAMAS::Poblar() {
     }
     
 }
-
+//funcion donde se ocupa una cama en el momento
 void LISTA_CAMAS::OcuparCama(string IDPaciente)
 {
 
@@ -50,7 +50,7 @@ void LISTA_CAMAS::OcuparCama(string IDPaciente)
     cout << "No hay camas disponibles para el paciente" << endl;
  
 }
-
+//funcion encargada en desocupar las camas a la hora del alta
 void LISTA_CAMAS::DesocuparCama(string IDPaciente)
 {
     if (!arregloCamas[0].estado) {
