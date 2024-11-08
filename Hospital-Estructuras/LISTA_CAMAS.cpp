@@ -14,25 +14,29 @@ void LISTA_CAMAS::Mostrar() {
 
 	cout << "--------------------- Lista de Camas ---------------------" << endl << endl;
 	for (int i = 0; i < CANTIDADCAMAS; i++) {
-		cout << "ID: " << arregloCamas[i].ID << "\tUbicación: " << arregloCamas[i].ubicacion << "\tEstado: ";
-		if (arregloCamas[i].estado) cout << "Ocupada" << endl;
-		else cout << "Desocupada" << endl;
+		cout << "#: " << arregloCamas[i].ID << "\tUbicacion: " << arregloCamas[i].ubicacion << "\tEstado: ";
+		if (arregloCamas[i].estado) cout << "Ocupada";
+		else cout << "Desocupada";
+        cout << "\tID Paciente: ";
+        if (arregloCamas[i].IDPaciente == 0)cout << "NA";
+        else cout << arregloCamas[i].IDPaciente;
+        cout << endl;
 	}
 
 }
 
 void LISTA_CAMAS::Poblar() {
-    int piso = 1;
-    for (int i = 0; i < CANTIDADCAMAS; i++) {
-        arregloCamas[i].ID = i + 1;
 
-        if (i % 10 == 0 && i != 0) {
-            piso++;
+    for (int j = 0; j < CANTIDADPISOS; j++) {
+
+        for (int i = 0; i < CANTIDADCAMAS/CANTIDADPISOS; i++) {
+            arregloCamas[(j*10) +i].ID = to_string((j*10)+ i + 1);
+            arregloCamas[(j * 10) + i].ubicacion = "Piso " + to_string(j+1);
+            arregloCamas[(j * 10) + i].estado = false;
+            arregloCamas[(j * 10) + i].IDPaciente = 0;
         }
-        arregloCamas[i].ubicacion = "Piso " + to_string(piso);
-        arregloCamas[i].estado = false;
-		arregloCamas[i].IDPaciente = 0;
     }
+    
 }
 
 void LISTA_CAMAS::OcuparCama(int IDPaciente)
@@ -53,7 +57,12 @@ void LISTA_CAMAS::OcuparCama(int IDPaciente)
 
 void LISTA_CAMAS::DesocuparCama(int IDPaciente)
 {
-    if (!arregloCamas[0].estado) cout << "No hay camas ocupadas" << endl; return;
+    if (!arregloCamas[0].estado) {
+
+        cout << "No hay camas ocupadas" << endl; 
+        return;
+
+    }
 
     for (int i = 0; i < CANTIDADCAMAS; i++) {
 

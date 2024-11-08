@@ -1,6 +1,7 @@
 #pragma once
 #include "Global.h"
 #define CANTIDADCAMAS 100
+#define CANTIDADPISOS 10
 
 class LISTA_CAMAS
 {

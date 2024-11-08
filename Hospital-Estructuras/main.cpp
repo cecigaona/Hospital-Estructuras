@@ -22,4 +22,12 @@ void main() {
 	prueba.modificar_paciente("A02");
 	prueba.modificar_paciente("A01");
 	prueba.mostrar();
+
+	LISTA_CAMAS prueba2;
+
+	prueba2.Mostrar();
+	prueba2.OcuparCama(1);
+	prueba2.Mostrar();
+	prueba2.DesocuparCama(1);
+	prueba2.Mostrar();
 }
