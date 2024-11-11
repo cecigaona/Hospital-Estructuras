@@ -3,10 +3,7 @@ FILA::FILA()
 {
 	principio = fin = NULL;
 }
-
-
-
-// insertar el nombre de las personas en la fila 
+//insertar el nombre de las personas en la fila 
 void FILA::insertar_fila(string nuevo)
 {
 	nodo = new INFO_FILA;
@@ -21,7 +18,7 @@ void FILA::insertar_fila(string nuevo)
 	//mostrar el nombre de la persona agregada 
 	cout << "\t persona agregada a la fila " << nuevo << endl;
 }
-
+//funcion encargada de sacar a los pacientes de la fila para asignarlos a una cama y poderlos agregar a la lista pacientes si necesario 
 string FILA::extraer_fila()
 {
 	string extraido;
@@ -40,6 +37,7 @@ string FILA::extraer_fila()
 	delete nodo;
 	return extraido;
 }
+//funcion encargada en mostrar como va la fila
 void FILA::FILA::mostrar()
 {
 	if (principio == NULL)

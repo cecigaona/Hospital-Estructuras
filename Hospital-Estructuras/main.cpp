@@ -41,5 +41,17 @@ void main() {
 	nombre = prueba3.extraer_fila();
 	cout << nombre << endl;
 
+	LISTA_CAMA_PACIENTES prueba4;
+	cama_paciente uno,extraido;
+	uno.ID_cama = "102";
+	uno.ID_paciente = "ASD";
+	uno.nombre = "Fer";
+	uno.ubicacion = "PB";
+	prueba4.mostrar();
+	prueba4.insertar(uno);
+	prueba4.mostrar();
+	extraido=prueba4.extraer(uno);
+	cout << "Se extrajo" << extraido.nombre << endl;
+
 
 }
