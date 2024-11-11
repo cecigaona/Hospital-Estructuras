@@ -7,16 +7,10 @@ FILA::FILA()
 
 
 // insertar el nombre de las personas en la fila 
-void FILA::insertarfila(DATOS_PERSONA nuevo_en_fila)
+void FILA::insertar_fila(string nuevo)
 {
-	//preguntar nombre del paciente a agregar a la fila 
-	string nombre;
-	cout << "\t ingresa el nombre de la persona a agregar a la fila ";
-	cin.ignore();
-	getline(cin, nombre);
-
 	nodo = new INFO_FILA;
-	nodo->info = nuevo_en_fila;
+	nodo->info = nuevo;
 	nodo->siguente = NULL;
 
 	if (principio == NULL)
@@ -25,15 +19,15 @@ void FILA::insertarfila(DATOS_PERSONA nuevo_en_fila)
 		fin->siguente = nodo;
 	fin = nodo;
 	//mostrar el nombre de la persona agregada 
-	cout << "\t persona agregada a la fila " << nombre << endl;
+	cout << "\t persona agregada a la fila " << nuevo << endl;
 }
 
-DATOS_PERSONA FILA::extraerdelafila()
+string FILA::extraer_fila()
 {
-	DATOS_PERSONA extraido;
+	string extraido;
 	//ver si la fila esta vacia 
 	if (principio == NULL)
-		extraido.nombre = "";
+		extraido = "";
 	return extraido;
 
 	nodo = principio;
@@ -57,7 +51,7 @@ void FILA::FILA::mostrar()
 	cout << "\t\t Las personas en la fila son: " << endl;
 	while (nodo!= NULL)
 	{
-		cout << nodo->info.nombre << endl; //muestra el nombre de la persona
+		cout << nodo->info << endl; //muestra el nombre de la persona
 		nodo = nodo->siguente;
 	}
 }

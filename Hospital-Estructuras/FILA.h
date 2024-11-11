@@ -2,15 +2,9 @@
 #include "Global.h"
 #include <iostream>
 #include <string>
-
-
-struct DATOS_PERSONA
-{
-	string nombre;
-};
 struct INFO_FILA
 {
-	DATOS_PERSONA info;
+	string info;
 	INFO_FILA* siguente;;
 };
 class FILA
@@ -19,8 +13,8 @@ public:
 	FILA();
 	~FILA();
 
-	void insertarfila(DATOS_PERSONA);
-	DATOS_PERSONA extraerdelafila();
+	void insertar_fila(string);
+	string extraer_fila();
 	void mostrar();
 
 private:

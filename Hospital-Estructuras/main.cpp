@@ -34,10 +34,12 @@ void main() {
 	prueba2.Mostrar();
 
 	FILA prueba3;
-	DATOS_PERSONA info3;
-
-	prueba3.insertarfila(info3);
-	prueba3.extraerdelafila();
 	prueba3.mostrar();
+	prueba3.insertar_fila("Sofia");
+	prueba3.mostrar();
+	string nombre;
+	nombre = prueba3.extraer_fila();
+	cout << nombre << endl;
+
 
 }
