@@ -23,6 +23,7 @@ void main() {
 	prueba.modificar_paciente("A02");
 	prueba.modificar_paciente("A01");
 	prueba.mostrar();
+	
 
 	LISTA_CAMAS prueba2;
 
@@ -31,4 +32,12 @@ void main() {
 	prueba2.Mostrar();
 	prueba2.DesocuparCama("A01");
 	prueba2.Mostrar();
+
+	FILA prueba3;
+	DATOS_PERSONA info3;
+
+	prueba3.insertarfila(info3);
+	prueba3.extraerdelafila();
+	prueba3.mostrar();
+
 }
