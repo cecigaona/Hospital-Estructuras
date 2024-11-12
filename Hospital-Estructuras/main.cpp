@@ -5,53 +5,52 @@
 #include "LISTA_CAMA_PACIENTES.h"
 #include "LISTA_PACIENTES.h"
 using namespace std;
+//funcion encargada en crear los ids de los pacientes
+string generador_ID_paciente(int contador) {
+	string nuevo = "P";
+	if (contador <= 9) {
+		nuevo = "P00";
+		nuevo += to_string(contador);
+	}
+	else if (contador >= 10 && contador <= 99) {
+		nuevo = "P0";
+		nuevo += to_string(contador);
+	}
+	else {
+		nuevo += to_string(contador);
+	}
+	return nuevo;
+}
 void main() {
-	//prueba
-	LISTA_PACIENTES prueba;
-	info_paciente info;
-	info.datos.nombre = "aaa";
-	info.datos.ID = "A01";
-	info.datos.estado = false;
-	info.datos.genero = "M";
-	info.datos.motivo = "dolor de cabeza";
-	info.datos.edad = 12;
-	info.expediente.insertar_historial("paciente desnutirdo");
-	prueba.insertar(info);
-	prueba.mostrar();
-	prueba.buscar_paciente("A01");
-	prueba.buscar_paciente("A02");
-	prueba.modificar_paciente("A02");
-	prueba.modificar_paciente("A01");
-	prueba.mostrar();
-	
-
-	LISTA_CAMAS prueba2;
-
-	prueba2.Mostrar();
-	prueba2.OcuparCama("A01");
-	prueba2.Mostrar();
-	prueba2.DesocuparCama("A01");
-	prueba2.Mostrar();
-
-	FILA prueba3;
-	prueba3.mostrar();
-	prueba3.insertar_fila("Sofia");
-	prueba3.mostrar();
-	string nombre;
-	nombre = prueba3.extraer_fila();
-	cout << nombre << endl;
-
-	LISTA_CAMA_PACIENTES prueba4;
-	cama_paciente uno,extraido;
-	uno.ID_cama = "102";
-	uno.ID_paciente = "ASD";
-	uno.nombre = "Fer";
-	uno.ubicacion = "PB";
-	prueba4.mostrar();
-	prueba4.insertar(uno);
-	prueba4.mostrar();
-	extraido=prueba4.extraer(uno);
-	cout << "Se extrajo" << extraido.nombre << endl;
-
-
+	setlocale(LC_ALL, "");
+	int opc_main, opc_paciente;
+	//pacientes
+	pacientes persona;
+	historiales persona_hist;
+	info_paciente datos_persona;
+	string nombre_persona;
+	//camas
+	//pacientes con cama
+	//INICIO MENÚ
+	cout << "BIENVENIDO AL GESTOR HOSPITALARIO" << endl;
+	do {
+		cout << "MENÚ PRINCIPAL" << endl;
+		cout << "1. Gestión de Pacientes \n2. GEstión de Camas \n3. Observación Pacientes camas \n4. Salir";
+		cin >> opc_main;
+		switch (opc_main) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			cout << "Guardando cambios..." << endl;
+			cout << "Saliendo del programa..." << endl;
+			break;
+		default:
+			cout << "Opción invalida..." << endl;
+			cout << "Intentar de nuevo..." << endl;
+		}
+	} while (opc_main != 4);
 }
