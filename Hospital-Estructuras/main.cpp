@@ -40,12 +40,13 @@ void main() {
 	cout << "BIENVENIDO AL GESTOR HOSPITALARIO" << endl;
 	do {
 		cout << "MENÚ PRINCIPAL" << endl;
-		cout << "1. Gestión de Pacientes \n2. GEstión de Camas \n3. Observación Pacientes camas \n4. Salir"<<endl;
+		cout << "1. Gestión de Pacientes \n2. Gestión de Camas \n3. Observación Pacientes camas \n4. Salir"<<endl;
 		cin >> opc_main;
 		system("cls");
 		switch (opc_main) {
 		case 1:
 			do {
+				//primer submenú de todo lo que conlleva los pacientes
 				cout << "\t MANEJADOR DE PACIENTES" << endl;
 				cout << "1. Formarse \n2. Modificar paciente \n4. Salir" << endl;
 				cin >> opc_paciente;
@@ -57,9 +58,11 @@ void main() {
 				}
 				switch (opc_paciente) {
 				case 1:
+					//Confirmar por donde entro el paciente
 					cout << "¿El paciente entra por urgencias?" << endl;
 					cout << "1. Si \n2. No " << endl;
 					cin >> opc_urgencias;
+					//si el paciente esta en urgencias asignar todo al momento
 					if (opc_urgencias == 1) {
 						urgencias.insertar_fila(nombre_persona);
 						cout << "Se formo en urgencias..." << endl;
@@ -84,13 +87,17 @@ void main() {
 								getline(cin, expediente);
 								datos_persona.expediente.insertar_historial(expediente);
 							}
+							//luego luego se le asigna cama no permitiendo que quede gente formada en urgencias
 							datos_persona.datos.nombre = urgencias.extraer_fila();
+							//se inserta a la fila de pacientes
 							l_pacientes.insertar(datos_persona);
+							//se ocupa una cama
 							dato_camas=l_camas.OcuparCama(datos_persona.datos.ID);
 							registro.ID_cama = dato_camas.ID;
 							registro.ubicacion = dato_camas.ubicacion;
 							registro.ID_paciente = datos_persona.datos.ID;
 							registro.nombre = datos_persona.datos.nombre;
+							//se pasa a cama pacientes
 							l_camas_pacientes.insertar(registro);
 							system("cls");
 						}
