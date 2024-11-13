@@ -85,16 +85,16 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 	cout << "Paciente con ID " << ID << " no encontrado." << endl;
 }
 //funcion encargada en mostrar los datos del paciente deseado
-void LISTA_PACIENTES::buscar_paciente(string ID)
+string LISTA_PACIENTES::buscar_paciente(string nombre)
 {
 	if (cabecera == NULL) {
 		cout << "La lista está vacía." << endl;
-		return;
+		return "";
 	}
 
 	nodo = cabecera;
 	while (nodo != NULL) {
-		if (nodo->reporte.datos.ID == ID) {
+		if (nodo->reporte.datos.nombre == nombre) {
 			cout << "\tPaciente encontrado: " << endl;
 			cout << "Nombre: " << nodo->reporte.datos.nombre << endl;
 			cout << "ID: " << nodo->reporte.datos.ID << endl;
@@ -103,7 +103,7 @@ void LISTA_PACIENTES::buscar_paciente(string ID)
 			cout << "Motivo de ingreso: " << nodo->reporte.datos.motivo << endl;
 			cout<< "Estado: " << (nodo->reporte.datos.estado ? "Dado de alta" : "No dado de alta") << endl;
 			cout<<"Expedientes: "<< nodo->reporte.expediente.consultar_tope()<<endl; 
-			return;
+			return nodo->reporte.datos.ID;
 		}
 		nodo = nodo->sig;
 	}

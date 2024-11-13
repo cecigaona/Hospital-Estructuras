@@ -9,13 +9,11 @@ void FILA::insertar_fila(string nuevo)
 	nodo = new INFO_FILA;
 	nodo->info = nuevo;
 	nodo->siguente = NULL;
-
-	if (principio == NULL)
+	if (principio == NULL) 
 		principio = nodo;
-	if (fin != NULL)
+	else 
 		fin->siguente = nodo;
 	fin = nodo;
-	//mostrar el nombre de la persona agregada 
 	cout << "\t persona agregada a la fila " << nuevo << endl;
 }
 //funcion encargada de sacar a los pacientes de la fila para asignarlos a una cama y poderlos agregar a la lista pacientes si necesario 
@@ -23,9 +21,10 @@ string FILA::extraer_fila()
 {
 	string extraido;
 	//ver si la fila esta vacia 
-	if (principio == NULL)
+	if (principio == NULL) {
 		extraido = "";
-	return extraido;
+		return extraido;
+	}
 
 	nodo = principio;
 	extraido = nodo->info;

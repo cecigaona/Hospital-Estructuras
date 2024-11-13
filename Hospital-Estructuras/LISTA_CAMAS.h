@@ -11,7 +11,7 @@ public:
 	~LISTA_CAMAS();
 	void Mostrar();
 	void Poblar();
-	void OcuparCama(string IDPaciente);
+	Camas OcuparCama(string IDPaciente);
 	void DesocuparCama(string IDPaciente);
 
 private:

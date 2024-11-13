@@ -17,7 +17,7 @@ public:
 	LISTA_PACIENTES();
 	void insertar(info_paciente);
 	void modificar_paciente(string);
-	void buscar_paciente(string);
+	string buscar_paciente(string);
 	void mostrar();
 private:
 	beneficiario* nodo, * cabecera, * fin;

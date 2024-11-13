@@ -35,16 +35,18 @@ void LISTA_CAMAS::Poblar() {
     
 }
 //funcion donde se ocupa una cama en el momento
-void LISTA_CAMAS::OcuparCama(string IDPaciente)
+Camas LISTA_CAMAS::OcuparCama(string IDPaciente)
 {
-
+    Camas datos;
     for (int i = 0; i < CANTIDADCAMAS; i++) {
 
         if (!arregloCamas[i].estado) {
             arregloCamas[i].estado = true;
             arregloCamas[i].ID_paciente = IDPaciente;
             cout << "Paciente " << IDPaciente << " ha sido asignado a la cama " << arregloCamas[i].ID << " en " << arregloCamas[i].ubicacion << endl;
-            return;
+            datos.ID = arregloCamas[i].ID;
+            datos.ubicacion = arregloCamas[i].ubicacion;
+            return datos;
         }
     }
     cout << "No hay camas disponibles para el paciente" << endl;
