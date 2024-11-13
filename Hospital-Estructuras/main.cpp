@@ -53,6 +53,7 @@ void main() {
 					cout << "Dame el nombre del paciente:" << endl;
 					cin.ignore();
 					getline(cin, nombre_persona);
+					system("cls");
 				}
 				switch (opc_paciente) {
 				case 1:
@@ -63,6 +64,7 @@ void main() {
 						urgencias.insertar_fila(nombre_persona);
 						cout << "Se formo en urgencias..." << endl;
 						id_persona = l_pacientes.buscar_paciente(nombre_persona);
+						system("cls");
 						if (id_persona == "") {
 							datos_persona.datos.ID = generador_ID_paciente(++cont);
 							cout<<"Dame el género de "<< nombre_persona<<":" << endl;
@@ -90,9 +92,7 @@ void main() {
 							registro.ID_paciente = datos_persona.datos.ID;
 							registro.nombre = datos_persona.datos.nombre;
 							l_camas_pacientes.insertar(registro);
-							l_pacientes.mostrar();
-							l_camas_pacientes.mostrar();
-							l_camas.Mostrar();
+							system("cls");
 						}
 					}
 					else {
