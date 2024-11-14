@@ -73,7 +73,7 @@ void main() {
 							datos_persona.datos.ID = generador_ID_paciente(++cont);
 							cout<<"Dame el género de "<< nombre_persona<<":" << endl;
 							cin.ignore();
-							getline(cin, datos_persona.datos.genero);
+							getline(cin, datos_persona.datos.genero); 
 							cout << "Dame el motivo de ingreso: " << endl;
 							getline(cin, datos_persona.datos.motivo);
 							cout << "Dame la edad de "<< nombre_persona<<":" << endl;
@@ -121,8 +121,13 @@ void main() {
 					}
 					break;
 				case 2:
+					//modificar pacientes
+					//si encuentra se puede modificar sino no
 				case 3:
+					//antender pacientes
+					//pasar a lista cama pacientes
 				case 4:
+					//mostrar fila o pacientes lista
 				case 5:
 					cout << "Guardando cambios..." << endl;
 					system("cls");
@@ -136,8 +141,10 @@ void main() {
 			} while (opc_paciente != 5);
 			break;
 		case 2:
+			//mostrar solo camas
 			break;
 		case 3:
+			//mostrar las camas que tienen pacientes
 			break;
 		case 4:
 			cout << "Guardando cambios..." << endl;
