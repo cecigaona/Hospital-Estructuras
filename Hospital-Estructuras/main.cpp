@@ -48,9 +48,9 @@ void main() {
 			do {
 				//primer submenú de todo lo que conlleva los pacientes
 				cout << "\t MANEJADOR DE PACIENTES" << endl;
-				cout << "1. Formarse \n2. Modificar paciente \n4. Salir" << endl;
+				cout << "1. Formarse \n2. Modificar paciente \n3. Atender pacientes \n4. Mostrar Pacientes \n5. Salir" << endl;
 				cin >> opc_paciente;
-				if (opc_paciente < 3) {
+				if (opc_paciente < 2) {
 					cout << "Dame el nombre del paciente:" << endl;
 					cin.ignore();
 					getline(cin, nombre_persona);
@@ -68,6 +68,7 @@ void main() {
 						cout << "Se formo en urgencias..." << endl;
 						id_persona = l_pacientes.buscar_paciente(nombre_persona);
 						system("cls");
+						//si la persona no esta en el sistema
 						if (id_persona == "") {
 							datos_persona.datos.ID = generador_ID_paciente(++cont);
 							cout<<"Dame el género de "<< nombre_persona<<":" << endl;
@@ -101,7 +102,19 @@ void main() {
 							l_camas_pacientes.insertar(registro);
 							system("cls");
 						}
+						//si la persona esta en el sistema se debe de actualizar
+						else {
+							l_pacientes.modificar_paciente(id_persona);
+							dato_camas = l_camas.OcuparCama(id_persona);
+							registro.ID_cama = dato_camas.ID;
+							registro.ubicacion = dato_camas.ubicacion;
+							registro.ID_paciente = id_persona;
+							registro.nombre = nombre_persona;
+							l_camas_pacientes.insertar(registro);
+							system("cls");
+						}
 					}
+					//se forma en la fila normal y se antienden despues
 					else {
 						normal.insertar_fila(nombre_persona);
 						cout << "Se formo en la fila normal..." << endl;
@@ -109,6 +122,8 @@ void main() {
 					break;
 				case 2:
 				case 3:
+				case 4:
+				case 5:
 					cout << "Guardando cambios..." << endl;
 					system("cls");
 					break;
@@ -118,7 +133,7 @@ void main() {
 					system("cls");
 					break;
 				}
-			} while (opc_paciente != 3);
+			} while (opc_paciente != 5);
 			break;
 		case 2:
 			break;
