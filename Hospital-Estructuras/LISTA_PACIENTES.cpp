@@ -109,7 +109,7 @@ string LISTA_PACIENTES::buscar_paciente(string nombre)
 	}
 }
 //funcion encargada de mostrar toda la lista de pacientes
-void LISTA_PACIENTES::mostrar()
+void LISTA_PACIENTES::Mostrar()
 {
 	int cont=0;
 	cout << "\tINFORMACIÓN DE LOS PACIENTES" << endl;

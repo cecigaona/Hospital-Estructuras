@@ -23,7 +23,7 @@ string generador_ID_paciente(int contador) {
 }
 void main() {
 	setlocale(LC_ALL, "");
-	int opc_main, opc_paciente, opc_urgencias, opc_expediente, cont=0;
+	int opc_main, opc_paciente, opc_urgencias, opc_expediente, opc_lista, cont=0;
 	//pacientes
 	historiales persona_hist;
 	info_paciente datos_persona;
@@ -123,10 +123,12 @@ void main() {
 
 				case 2:
 
+					system("cls");
 					cout << "Ingrese el nombre del paciente a modificar: ";
 					cin.ignore();
 					getline(cin, nombre_persona);
 					id_persona = l_pacientes.buscar_paciente(nombre_persona);
+					system("cls");
 					if (id_persona != "") {
 						l_pacientes.modificar_paciente(id_persona);
 						cout << "Paciente modificado." << endl;
@@ -134,11 +136,12 @@ void main() {
 					else {
 						cout << "Paciente no encontrado." << endl;
 					}
+					
 					break;
 
 				case 3:
 
-
+					system("cls");
 					nombre_persona = normal.extraer_fila();
 
 					if(nombre_persona == ""){
@@ -159,7 +162,7 @@ void main() {
 					}
 					else {
 
-						cout << "El paciente ya se encuentra con los pacientes siendo atendidos" << endl;
+						cout << "El paciente ya se encuentra con los pacientes siendo atendidos (posible bug??)" << endl;
 						break;
 
 					}
@@ -170,13 +173,26 @@ void main() {
 					registro.ID_paciente = id_persona;
 					registro.nombre = nombre_persona;
 					l_camas_pacientes.insertar(registro);
+					system("cls");
 					break;
 
 
 				case 4:
 					//mostrar fila o pacientes lista
-					cout << "Elija que fila quiere mostrar" << endl;
+					cout << "Elija que fila quiere mostrar (1.-Urgentes   2.-Normales" << endl;
+					cin >> opc_lista;
+					if (opc_lista == 1) {
+						l_pacientes.Mostrar();
+					}
+					else if (opc_lista == 2) {
 
+					}
+					else {
+
+						cout << "Opcion invalida" << endl;
+
+					}
+					break;
 
 				case 5:
 					cout << "Guardando cambios..." << endl;
@@ -191,10 +207,11 @@ void main() {
 			} while (opc_paciente != 5);
 			break;
 		case 2:
-			//mostrar solo camas
+			l_camas.Mostrar();
 			break;
 		case 3:
-			//mostrar las camas que tienen pacientes
+			//ESTA MAL CREO, osea creo q no es lo q quiere cecisisabe, LUEGO DESCIFRO COMO HACERLO CORRECTAMENTE
+			l_camas_pacientes.mostrar();
 			break;
 		case 4:
 			cout << "Guardando cambios..." << endl;
