@@ -4,7 +4,7 @@
 #include "LISTA_CAMAS.h"
 #include "LISTA_CAMA_PACIENTES.h"
 #include "LISTA_PACIENTES.h"
-using namespace std;
+
 //funcion encargada en crear los ids de los pacientes
 string generador_ID_paciente(int contador) {
 	string nuevo = "P";
@@ -120,14 +120,64 @@ void main() {
 						cout << "Se formo en la fila normal..." << endl;
 					}
 					break;
+
 				case 2:
-					//modificar pacientes
-					//si encuentra se puede modificar sino no
+
+					cout << "Ingrese el nombre del paciente a modificar: ";
+					cin.ignore();
+					getline(cin, nombre_persona);
+					id_persona = l_pacientes.buscar_paciente(nombre_persona);
+					if (id_persona != "") {
+						l_pacientes.modificar_paciente(id_persona);
+						cout << "Paciente modificado." << endl;
+					}
+					else {
+						cout << "Paciente no encontrado." << endl;
+					}
+					break;
+
 				case 3:
-					//antender pacientes
-					//pasar a lista cama pacientes
+
+
+					nombre_persona = normal.extraer_fila();
+
+					if(nombre_persona == ""){
+						cout << "No hay pacientes en espera." << endl;
+						break;
+					}
+
+					cout << "Atendiendo a " << nombre_persona << endl;
+
+					id_persona = l_pacientes.buscar_paciente(nombre_persona);
+
+					if (id_persona == "") { 
+						datos_persona.datos.ID = generador_ID_paciente(++cont);
+						datos_persona.datos.nombre = nombre_persona;
+						datos_persona.datos.estado = true; 
+						l_pacientes.insertar(datos_persona);
+						id_persona = datos_persona.datos.ID;
+					}
+					else {
+
+						cout << "El paciente ya se encuentra con los pacientes siendo atendidos" << endl;
+						break;
+
+					}
+
+					dato_camas = l_camas.OcuparCama(id_persona);
+					registro.ID_cama = dato_camas.ID;
+					registro.ubicacion = dato_camas.ubicacion;
+					registro.ID_paciente = id_persona;
+					registro.nombre = nombre_persona;
+					l_camas_pacientes.insertar(registro);
+					break;
+
+
 				case 4:
 					//mostrar fila o pacientes lista
+					cout << "Elija que fila quiere mostrar" << endl;
+
+
 				case 5:
 					cout << "Guardando cambios..." << endl;
 					system("cls");

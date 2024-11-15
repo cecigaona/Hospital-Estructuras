@@ -43,7 +43,7 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 					break;
 				case 2:
 					int estado;
-					cout << "De alta: \n1. si \n2. no";
+					cout << "De alta: \n1. si \n2. no" <<endl<<"OPC: ";
 					cin >> estado;
 					if (estado == 1)
 						nodo->reporte.datos.estado = true;
