@@ -179,13 +179,13 @@ void main() {
 
 				case 4:
 					//mostrar fila o pacientes lista
-					cout << "Elija que fila quiere mostrar (1.-Urgentes   2.-Normales" << endl;
+					cout << "Elija que fila quiere mostrar (1.-Formados   2.-Admitidos" << endl;
 					cin >> opc_lista;
 					if (opc_lista == 1) {
-						l_pacientes.Mostrar();
+						normal.mostrar();
 					}
 					else if (opc_lista == 2) {
-
+						l_pacientes.Mostrar();
 					}
 					else {
 

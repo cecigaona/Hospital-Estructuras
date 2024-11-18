@@ -130,6 +130,7 @@
     <ClCompile Include="FILA.cpp" />
     <ClCompile Include="LISTA_CAMAS.cpp" />
     <ClCompile Include="LISTA_CAMA_PACIENTES.cpp" />
+    <ClCompile Include="LISTA_DOCTORES.cpp" />
     <ClCompile Include="LISTA_PACIENTES.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PILA_HISTORIALMEDICO.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="LISTA_CAMAS.h" />
     <ClInclude Include="LISTA_CAMA_PACIENTES.h" />
+    <ClInclude Include="LISTA_DOCTORES.h" />
     <ClInclude Include="LISTA_PACIENTES.h" />
     <ClInclude Include="PILA_HISTORIALMEDICO.h" />
   </ItemGroup>
