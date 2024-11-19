@@ -9,7 +9,7 @@ LISTA_CAMAS::LISTA_CAMAS() {
 void LISTA_CAMAS::Mostrar() {
 
     cout << "--------------------- Lista de Camas ---------------------" << endl;
-    cout << "ID \tUbicacción \tEstado" << endl;
+    cout << "ID \tUbicación \tEstado" << endl;
 	for (int i = 0; i < CANTIDADCAMAS; i++) {
 		cout << "#: " << arregloCamas[i].ID << "\t" << arregloCamas[i].ubicacion << "\t\t";
 		if (arregloCamas[i].estado) 
