@@ -8,9 +8,9 @@ LISTA_DOCTORES::LISTA_DOCTORES()
 void LISTA_DOCTORES::Mostrar() {
     cout << "Lista de doctores disponibles:" << endl;
     for (int i = 0; i < MAXDOCTORES; i++) {
-        cout << i + 1 << "Nombre: " << doctores[i].nombre
-        << "\tEspecialidad: " << doctores[i].especialidad
-        << "\tCedula: " << doctores[i].cedula << endl;
+        cout << i + 1 << "- Nombre: " << doctores[i].nombre
+        << "\t\tEspecialidad: " << doctores[i].especialidad
+        << "\t\tCedula: " << doctores[i].cedula << endl;
     }
 }
 
@@ -29,14 +29,14 @@ void LISTA_DOCTORES::MostrarDoctorEspecifico(int opcion) {
 
 void LISTA_DOCTORES::Poblar() {
     string nombres[MAXDOCTORES] = {
-        "Fer Pena", "Cecilia Gaona", "Gabriel Alvarez", "Pepe Pio",
-        "Karla Mendoza", "Felipe Calderon", "Benito Juarez", "Donald Trump",
-        "Oscar Diaz", "Lucia Morales"
+        "Fer Pena", "Cecilia Ga", "Gabriel Al", "Pepe Po",
+        "Karla Me", "Felipe Ca", "Benito Jua", "Donald Tr",
+        "Oscar Di", "Lucia Mor"
     };
 
     string especialidades[MAXDOCTORES] = {
-        "Cardiologia", "Pediatria", "Neurologia", "Dermatologia",
-        "Oncologia", "Oftalmologia", "Psiquiatria", "Gastroenterologia",
+        "Cardiologia", "Pediatria   ", "Neurologia", "Dermatologia",
+        "Oncologia   ", "Oftalmologia", "Psiquiatria", "Gastroenterologia",
         "Neumologia", "Endocrinologia"
     };
 

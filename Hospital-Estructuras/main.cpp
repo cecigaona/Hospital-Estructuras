@@ -4,6 +4,7 @@
 #include "LISTA_CAMAS.h"
 #include "LISTA_CAMA_PACIENTES.h"
 #include "LISTA_PACIENTES.h"
+#include "LISTA_DOCTORES.h"
 
 //funcion encargada en crear los ids de los pacientes
 string generador_ID_paciente(int contador) {
@@ -23,7 +24,7 @@ string generador_ID_paciente(int contador) {
 }
 void main() {
 	setlocale(LC_ALL, "");
-	int opc_main, opc_paciente, opc_urgencias, opc_expediente, opc_lista, cont=0;
+	int opc_main, opc_paciente, opc_urgencias, opc_expediente, opc_lista, opc_doctor, cont=0;
 	//pacientes
 	historiales persona_hist;
 	info_paciente datos_persona;
@@ -36,6 +37,9 @@ void main() {
 	//pacientes con cama
 	cama_paciente registro;
 	LISTA_CAMA_PACIENTES l_camas_pacientes;
+	//doctores disponibles
+	LISTA_DOCTORES l_doctores;
+
 	//INICIO MENÚ
 	cout << "BIENVENIDO AL GESTOR HOSPITALARIO" << endl;
 	do {
@@ -70,6 +74,17 @@ void main() {
 						system("cls");
 						//si la persona no esta en el sistema
 						if (id_persona == "") {
+							l_doctores.Mostrar();
+							do {
+
+								cout << endl << "Seleccione doctor que quiera asignar (1-10): ";
+								cin >> opc_doctor;
+								if (opc_doctor < 1 && opc_doctor>10) cout << "Ingrese doctor valido" << endl;
+
+							} while (opc_doctor < 1 && opc_doctor>10);
+							
+							l_doctores.MostrarDoctorEspecifico(opc_doctor);
+							datos_persona.datos.numeroDeDoctor = opc_doctor;
 							datos_persona.datos.ID = generador_ID_paciente(++cont);
 							cout<<"Dame el género de "<< nombre_persona<<":" << endl;
 							cin.ignore();
@@ -162,7 +177,7 @@ void main() {
 					}
 					else {
 
-						cout << "El paciente ya se encuentra con los pacientes siendo atendidos (posible bug??)" << endl;
+						cout << "El paciente ya se encuentra con los pacientes siendo atendidos" << endl;
 						break;
 
 					}
@@ -179,7 +194,7 @@ void main() {
 
 				case 4:
 					//mostrar fila o pacientes lista
-					cout << "Elija que fila quiere mostrar (1.-Formados   2.-Admitidos" << endl;
+					cout << "Elija que fila quiere mostrar (1.-Formados   2.-Admitidos)" << endl;
 					cin >> opc_lista;
 					if (opc_lista == 1) {
 						normal.mostrar();

@@ -1,4 +1,7 @@
 #include "LISTA_PACIENTES.h"
+#include "LISTA_DOCTORES.h"
+
+LISTA_DOCTORES l_doctores;
 
 LISTA_PACIENTES::LISTA_PACIENTES()
 {
@@ -34,7 +37,7 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 			cout << "Nombre: " << nodo->reporte.datos.nombre << endl;
 			do {
 				cout << "\tINFORMACION A MODIFICAR" << endl;
-				cout << "1. Edad \n2. Estado \n3. Motivo \n4. Expediente \n5. Salir " << endl;
+				cout << "1. Edad \n2. Estado \n3. Motivo \n4. Expediente \n5. Salir \n6. Salir" << endl;
 				cin >> opc;
 				switch (opc) {
 				case 1:
@@ -71,13 +74,30 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 					}
 					break;
 				case 5:
+					int opc_doctor;
+					cout << "Doctor actual" << endl;
+
+					l_doctores.MostrarDoctorEspecifico(nodo->reporte.datos.numeroDeDoctor);
+					cout << endl;
+					l_doctores.Mostrar();
+					do {
+
+						cout << endl << "Seleccione doctor que quiera asignar (1-10)";
+						cin >> opc_doctor;
+						if (opc_doctor < 1 && opc_doctor>10) cout << "Ingrese doctor valido" << endl;
+
+					} while (opc_doctor < 1 && opc_doctor>10);
+
+					l_doctores.MostrarDoctorEspecifico(opc_doctor);
+					break;
+				case 6:
 					cout << "Cerrando modificaciones..." << endl;
 					break;
 				default:
 					cout << "Opción no válida." << endl;
 					break;
 				}
-			} while (opc != 5);
+			} while (opc != 6);
 			return;
 		}
 		nodo = nodo->sig;
@@ -103,6 +123,7 @@ string LISTA_PACIENTES::buscar_paciente(string nombre)
 			cout << "Motivo de ingreso: " << nodo->reporte.datos.motivo << endl;
 			cout<< "Estado: " << (nodo->reporte.datos.estado ? "Dado de alta" : "No dado de alta") << endl;
 			cout<<"Expedientes: "<< nodo->reporte.expediente.consultar_tope()<<endl; 
+			cout << "Numero De Doctor: " << nodo->reporte.datos.numeroDeDoctor << endl;
 			return nodo->reporte.datos.ID;
 		}
 		nodo = nodo->sig;
@@ -127,6 +148,8 @@ void LISTA_PACIENTES::Mostrar()
 		else 
 			cout << "No alta";
 		cout << "\t\t" << nodo->reporte.expediente.consultar_tope();
+		cout << endl <<"Datos doctor: " <<endl;
+		l_doctores.MostrarDoctorEspecifico(nodo->reporte.datos.numeroDeDoctor);
 		nodo = nodo->sig;
 		cout << endl;
 	}

@@ -11,6 +11,7 @@ struct pacientes {
 	string genero;
 	string motivo;
 	int edad;
+	int numeroDeDoctor;
 };
 //registro donde se guarda la información de las camas
 struct Camas {
