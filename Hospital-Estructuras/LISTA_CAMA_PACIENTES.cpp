@@ -33,7 +33,7 @@ cama_paciente LISTA_CAMA_PACIENTES::extraer(cama_paciente expulsado)
 	anterior = NULL;
 	nodo = cabecera;
 	do {
-		if (nodo->info.ID_paciente == expulsado.ID_paciente && nodo->info.ID_cama == expulsado.ID_cama) {
+		if (nodo->info.ID_paciente == expulsado.ID_paciente) {
 			encontrado = true;
 			break;
 		}

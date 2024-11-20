@@ -39,14 +39,16 @@ Camas LISTA_CAMAS::OcuparCama(string IDPaciente)
 {
     Camas datos;
     for (int i = 0; i < CANTIDADCAMAS; i++) {
+        if (!arregloCamas[i].estado) {  
+            arregloCamas[i].estado = true;  
+            arregloCamas[i].ID_paciente = IDPaciente; 
+            cout << "Paciente " << IDPaciente << " ha sido asignado a la cama "
+                << arregloCamas[i].ID << " en " << arregloCamas[i].ubicacion << endl;
 
-        if (!arregloCamas[i].estado) {
-            arregloCamas[i].estado = true;
-            arregloCamas[i].ID_paciente = IDPaciente;
-            cout << "Paciente " << IDPaciente << " ha sido asignado a la cama " << arregloCamas[i].ID << " en " << arregloCamas[i].ubicacion << endl;
+            // Asignamos los valores de la cama ocupada al objeto 'datos'
             datos.ID = arregloCamas[i].ID;
             datos.ubicacion = arregloCamas[i].ubicacion;
-            return datos;
+            return datos;  // Retornamos la cama ocupada
         }
     }
     cout << "No hay camas disponibles para el paciente" << endl;

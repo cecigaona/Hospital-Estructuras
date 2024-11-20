@@ -16,7 +16,7 @@ class LISTA_PACIENTES
 public:
 	LISTA_PACIENTES();
 	void insertar(info_paciente);
-	void modificar_paciente(string);
+	int modificar_paciente(string);
 	string buscar_paciente(string);
 	void Mostrar();
 private:

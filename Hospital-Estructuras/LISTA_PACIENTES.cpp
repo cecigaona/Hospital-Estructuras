@@ -23,12 +23,10 @@ void LISTA_PACIENTES::insertar(info_paciente nuevo_paciente)
 	fin = nodo;
 }
 //funcion encargada de cambiar los datos de los pacientes para mantenerlos actualizados
-void LISTA_PACIENTES::modificar_paciente(string ID)
+int LISTA_PACIENTES::modificar_paciente(string ID)
 {
-	if (cabecera == NULL) {
-		cout << "No hay pacientes almacenados" << endl;
-		return;
-	}
+	if (cabecera == NULL) 
+		return -1;
 	int opc;
 	nodo = cabecera;
 	while (nodo != NULL) {
@@ -98,7 +96,10 @@ void LISTA_PACIENTES::modificar_paciente(string ID)
 					break;
 				}
 			} while (opc != 6);
-			return;
+			if (nodo->reporte.datos.estado)
+				return 1;
+			else
+				return 2;
 		}
 		nodo = nodo->sig;
 	}
@@ -128,6 +129,7 @@ string LISTA_PACIENTES::buscar_paciente(string nombre)
 		}
 		nodo = nodo->sig;
 	}
+	return "";
 }
 //funcion encargada de mostrar toda la lista de pacientes
 void LISTA_PACIENTES::Mostrar()
