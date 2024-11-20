@@ -150,6 +150,7 @@ void LISTA_PACIENTES::Mostrar()
 		else 
 			cout << "No alta";
 		cout << "\t\t" << nodo->reporte.expediente.consultar_tope();
+		cout << "\t";
 		l_doctores.MostrarNombreDoctor(nodo->reporte.datos.numeroDeDoctor);
 		nodo = nodo->sig;
 		cout << endl;

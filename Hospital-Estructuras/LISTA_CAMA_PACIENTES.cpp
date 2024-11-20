@@ -78,7 +78,7 @@ void LISTA_CAMA_PACIENTES::mostrar()
 	nodo = cabecera;
 	cout << "\tNombre \tID Paciente \tID Cama \tUbicacion" << endl;
 	while (nodo != NULL) {
-		cout << ++cont << ". \t" << nodo->info.nombre << "\t" << nodo->info.ID_paciente << "\t" << nodo->info.ID_cama <<"\t" << nodo->info.ubicacion;
+		cout << ++cont << ". \t" << nodo->info.nombre << "\t" << nodo->info.ID_paciente << "\t" << nodo->info.ID_cama <<"\t\t" << nodo->info.ubicacion;
 		nodo = nodo->sig;
 		cout << endl;
 	}
