@@ -26,7 +26,7 @@ string generador_ID_paciente() {
 }
 void main() {
 	setlocale(LC_ALL, "");
-	int opc_main, opc_paciente, opc_urgencias, opc_expediente, opc_lista, opc_doctor, estado;
+	int opc_main, opc_paciente, opc_urgencias, opc_expediente, opc_lista, opc_doctor, estado, genero;
 	//pacientes
 	historiales persona_hist;
 	info_paciente datos_persona, datos_persona2;
@@ -45,7 +45,6 @@ void main() {
 	//INICIO MENÚ
 	cout << "BIENVENIDO AL GESTOR HOSPITALARIO" << endl;
 	do {
-		system("cls");
 		cout << "MENÚ PRINCIPAL" << endl;
 		cout << "1. Gestión de Pacientes \n2. Gestión de Camas \n3. Observación Pacientes camas \n4. Salir"<<endl;
 		cin >> opc_main;
@@ -90,8 +89,14 @@ void main() {
 						datos_persona.datos.numeroDeDoctor = opc_doctor;
 						datos_persona.datos.ID = generador_ID_paciente();
 						cout << "Dame el género de " << nombre_persona << ":" << endl;
-						cin.ignore();
-						getline(cin, datos_persona.datos.genero);
+						cout << "1. Femenino \n2. Masculino" << endl;
+						cin >> genero;
+						if (genero == 1)
+							datos_persona.datos.genero = "F";
+						else if (genero == 2)
+							datos_persona.datos.genero = "M";
+						else
+							cout << "Opción invalida..." << endl;
 						cout << "Dame el motivo de ingreso: " << endl;
 						getline(cin, datos_persona.datos.motivo);
 						cout << "Dame la edad de " << nombre_persona << ":" << endl;
@@ -109,8 +114,8 @@ void main() {
 						}
 
 						// Asignar cama al paciente
-						datos_persona.datos.nombre = urgencias.extraer_fila(); // Asignar nombre al paciente de urgencias
-						l_pacientes.insertar(datos_persona); // Insertar paciente en lista
+						datos_persona.datos.nombre = urgencias.extraer_fila(); 
+						l_pacientes.insertar(datos_persona); 
 						dato_camas = l_camas.OcuparCama(datos_persona.datos.ID);
 
 						// Registrar paciente en camas
@@ -191,8 +196,14 @@ void main() {
 					datos_persona2.datos.numeroDeDoctor = opc_doctor;
 					datos_persona2.datos.ID = generador_ID_paciente();
 					cout << "Dame el género de " << nombre_persona2 << ":" << endl;
-					cin.ignore();
-					getline(cin, datos_persona2.datos.genero);
+					cout << "1. Femenino \n2. Masculino" << endl;
+					cin >> genero;
+					if (genero == 1)
+						datos_persona2.datos.genero = "F";
+					else if (genero == 2)
+						datos_persona2.datos.genero = "M";
+					else
+						cout << "Opción invalida..." << endl;
 					cout << "Dame el motivo de ingreso: " << endl;
 					getline(cin, datos_persona2.datos.motivo);
 					cout << "Dame la edad de " << nombre_persona2 << ":" << endl;
@@ -261,7 +272,6 @@ void main() {
 		case 2:
 			//mostrar las camas
 			l_camas.Mostrar();
-			cout << endl;
 			break;
 		case 3:
 			//mostrar las camas ocupadas con sus pacientes
