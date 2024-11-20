@@ -206,6 +206,7 @@ void main() {
 					else
 						cout << "Opción invalida..." << endl;
 					cout << "Dame el motivo de ingreso: " << endl;
+					cin.ignore();
 					getline(cin, datos_persona2.datos.motivo);
 					cout << "Dame la edad de " << nombre_persona2 << ":" << endl;
 					cin >> datos_persona2.datos.edad;
