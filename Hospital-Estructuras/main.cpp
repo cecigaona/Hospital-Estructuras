@@ -130,7 +130,7 @@ void main() {
 					}
 					// Si la persona está en el sistema, solo actualiza la cama
 					else {
-						l_pacientes.modificar_paciente(id_persona);
+						estado=l_pacientes.modificar_paciente(id_persona);
 						dato_camas = l_camas.OcuparCama(id_persona);
 						registro.ID_cama = dato_camas.ID;
 						registro.ubicacion = dato_camas.ubicacion;
@@ -236,7 +236,7 @@ void main() {
 				}
 				else {
 					// Si el paciente ya existe, se modifica y asigna cama
-					l_pacientes.modificar_paciente(id_persona2);
+					estado=l_pacientes.modificar_paciente(id_persona2);
 					dato_camas = l_camas.OcuparCama(id_persona2);
 					registro.ID_cama = dato_camas.ID;
 					registro.ubicacion = dato_camas.ubicacion;
