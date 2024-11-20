@@ -35,7 +35,7 @@ int LISTA_PACIENTES::modificar_paciente(string ID)
 			cout << "Nombre: " << nodo->reporte.datos.nombre << endl;
 			do {
 				cout << "\tINFORMACION A MODIFICAR" << endl;
-				cout << "1. Edad \n2. Estado \n3. Motivo \n4. Expediente \n5. Salir \n6. Salir" << endl;
+				cout << "1. Edad \n2. Estado \n3. Motivo \n4. Expediente \n5. Doctor \n6. Salir" << endl;
 				cin >> opc;
 				switch (opc) {
 				case 1:
