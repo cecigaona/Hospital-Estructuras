@@ -141,7 +141,7 @@ void LISTA_PACIENTES::Mostrar()
 		return;
 	}
 	nodo = cabecera;
-	cout << "  Nombre\tID\tGénero\tEdad\tMotivo de Ingreso\tEstado\t\tExpediente" << endl;
+	cout << "  Nombre\tID\tGénero\tEdad\tMotivo de Ingreso\tEstado\t\tExpediente\t\t\tDoctor" << endl;
 	while (nodo != NULL) {
 		cout << ++cont<<". " << nodo->reporte.datos.nombre << "\t\t" << nodo->reporte.datos.ID << "\t" << nodo->reporte.datos.genero;
 		cout << "\t" << nodo->reporte.datos.edad << "\t" << nodo->reporte.datos.motivo << "\t\t";
@@ -150,8 +150,7 @@ void LISTA_PACIENTES::Mostrar()
 		else 
 			cout << "No alta";
 		cout << "\t\t" << nodo->reporte.expediente.consultar_tope();
-		cout << endl <<"Datos doctor: " <<endl;
-		l_doctores.MostrarDoctorEspecifico(nodo->reporte.datos.numeroDeDoctor);
+		l_doctores.MostrarNombreDoctor(nodo->reporte.datos.numeroDeDoctor);
 		nodo = nodo->sig;
 		cout << endl;
 	}

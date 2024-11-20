@@ -21,6 +21,7 @@ public:
 	//este metodo va a ser para mostrar los datosw del doctor que se le haya asignado al paciente, 
 	// por medio de una varibale int (porque los docotores ya van pre creados)
 	void MostrarDoctorEspecifico(int opcion);
+	void MostrarNombreDoctor(int opc);
 
 private:
 

@@ -27,6 +27,14 @@ void LISTA_DOCTORES::MostrarDoctorEspecifico(int opcion) {
     }
 }
 
+void LISTA_DOCTORES::MostrarNombreDoctor(int opc)
+{
+    if (opc > 0 && opc <= MAXDOCTORES) {
+        Doctor doc = doctores[opc - 1];
+        cout << doc.nombre;
+    }
+}
+
 void LISTA_DOCTORES::Poblar() {
     string nombres[MAXDOCTORES] = {
         "Fer Pena", "Cecilia Ga", "Gabriel Al", "Pepe Po",
